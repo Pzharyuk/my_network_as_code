@@ -5,8 +5,8 @@
   gather_facts: no
   tasks:
   - template:
-      src=./templates/cisco_ios_xe_router.j2
-       dest=/home/ignw/my_network_as_code/configs/{{ inventory_hostname }}
+      src=templates/cisco_ios_xe_router.j2
+       dest=configs/{{ inventory_hostname }}
 
 - name: Generate NX-OS Configurations
   connection: local
@@ -14,8 +14,8 @@
   gather_facts: no
   tasks:
   - template:
-      src=./templates/cisco_nxos.j2
-       dest=/home/ignw/my_network_as_code/configs/{{ inventory_hostname }}
+      src=templates/cisco_nxos.j2
+       dest=configs/{{ inventory_hostname }}
 
 - name: Generate ASA Configurations
   connection: local
@@ -23,5 +23,5 @@
   gather_facts: no
   tasks:
   - template:
-      src=./templates/cisco_asa.j2
-       dest=/home/ignw/my_network_as_code/configs/{{ inventory_hostname }}
+      src=templates/cisco_asa.j2
+       dest=configs/{{ inventory_hostname }}
