@@ -5,7 +5,7 @@ node {
       // Get our repo cloned and prepped for action
   }
    stage ('Render Configurations') {
-     // Generate our configurations with our sweet Playbooks
+     sh 'ansible-playbook generate_configurations.yaml'
   }
    stage ('Unit Testing') {
      // Do some kind of "linting" on our code to make sure we didn't bugger anything up too badly
