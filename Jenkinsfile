@@ -19,6 +19,7 @@ e-packages/'
      sh 'jenkins_build/bin/python napalm-ansible/setup.py install'
      sh '''sed -i -e 's/\\/usr\\/local/jenkins_build/g' ansible.cfg'''
      sh '''sed -i -e 's/dist-/site-/g' ansible.cfg'''
+     sh '''sed -i -e 's/\\/usr\\/bin/jenkins_build/g' ansible.cfg'''
      sh 'ansible-playbook deploy_configurations.yaml -e "ansible_python_interpreter=jenkins_build/bin/python"'
   }
   stage ('Functional/Integration Testing') {
